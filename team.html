@@ -20,57 +20,84 @@
   --bg:#0A0A0F; --card:#121218; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.16);
   --text:#fff; --muted:rgba(255,255,255,.56); --muted-2:rgba(255,255,255,.40);
 }
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0; padding:0; box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
   font-family:'Inter','Helvetica Neue',Helvetica,Arial,system-ui,-apple-system,sans-serif;
   background:var(--bg); color:var(--text); min-height:100vh; min-height:100dvh;
-  display:flex; align-items:center; justify-content:center; padding:40px 18px;
+  display:flex; align-items:center; justify-content:center; padding:32px 16px;
   -webkit-font-smoothing:antialiased; position:relative; overflow-x:hidden;
 }
 body::before{
   content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
   background:
-    radial-gradient(55% 40% at 50% -6%, var(--glow), transparent 70%),
-    radial-gradient(45% 35% at 90% 4%, rgba(110,60,255,.28), transparent 70%),
-    radial-gradient(40% 32% at 5% 98%, rgba(28,43,255,.20), transparent 70%);
+    radial-gradient(60% 42% at 50% -8%, var(--glow), transparent 70%),
+    radial-gradient(46% 36% at 92% 4%, rgba(110,60,255,.26), transparent 70%),
+    radial-gradient(42% 34% at 4% 99%, rgba(28,43,255,.18), transparent 70%);
 }
-.wrap{position:relative; z-index:1; width:100%; max-width:760px}
-.top{text-align:center; margin-bottom:34px}
-.logo{height:30px; display:inline-flex; align-items:center}
-.logo img{height:30px; width:auto; display:block}
-.logo .fb{display:none; font-weight:900; font-size:26px; letter-spacing:-1px; color:#fff}
-h1{margin-top:20px; font-size:36px; font-weight:800; letter-spacing:-1px}
-.sub{margin-top:9px; font-size:14px; font-weight:500; color:var(--muted)}
-.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.wrap{position:relative; z-index:1; width:100%; max-width:780px}
+.top{text-align:center; margin-bottom:26px}
+.logo{height:28px; display:inline-flex; align-items:center}
+.logo img{height:28px; width:auto; display:block}
+.logo .fb{display:none; font-weight:900; font-size:24px; letter-spacing:-1px; color:#fff}
+h1{margin-top:16px; font-size:28px; font-weight:800; letter-spacing:-1px}
+.sub{margin-top:8px; font-size:13.5px; font-weight:500; color:var(--muted)}
+
+/* MOBILE-FIRST: eine Spalte, kompakte Listen-Kacheln */
+.grid{display:grid; grid-template-columns:1fr; gap:11px}
 .tile{
-  display:block; background:var(--card); border:1px solid var(--line); border-radius:22px;
-  padding:26px 18px; text-align:center; text-decoration:none; color:inherit; cursor:pointer;
+  display:flex; align-items:center; gap:14px; text-align:left;
+  background:var(--card); border:1px solid var(--line); border-radius:18px;
+  padding:14px 16px; text-decoration:none; color:inherit; cursor:pointer;
   transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease, background .16s ease;
+  -webkit-tap-highlight-color:transparent;
 }
-.tile:hover{transform:translateY(-4px); border-color:var(--accent); background:#15151d; box-shadow:0 20px 44px rgba(28,43,255,.22)}
+.tile:hover{border-color:var(--accent); background:#15151d; box-shadow:0 14px 30px rgba(28,43,255,.18)}
+.tile:active{transform:scale(.99)}
 .av{
-  width:72px; height:72px; border-radius:50%; margin:0 auto 14px; overflow:hidden; position:relative;
+  width:56px; height:56px; flex:0 0 auto; border-radius:50%; overflow:hidden; position:relative;
   background:linear-gradient(135deg,#1C2BFF,#7E88FF);
-  display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:24px; letter-spacing:-1px;
-  box-shadow:0 8px 22px rgba(28,43,255,.40);
+  display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:19px; letter-spacing:-1px;
+  box-shadow:0 6px 18px rgba(28,43,255,.36);
 }
 .av img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
-.tile .nm{font-size:16.5px; font-weight:800; letter-spacing:-.3px}
-.tile .rl{font-size:12px; font-weight:600; color:var(--muted); margin-top:3px}
-.tile .go{
-  margin-top:14px; display:inline-flex; align-items:center; gap:6px;
-  font-size:11.5px; font-weight:700; color:var(--accent-2); letter-spacing:.2px;
-  padding:6px 13px; border-radius:999px; background:rgba(28,43,255,.14); border:1px solid rgba(28,43,255,.28);
-}
-.tile .go svg{width:13px; height:13px}
-.foot{margin-top:34px; text-align:center; font-size:12px; font-weight:600; color:var(--muted-2); letter-spacing:.4px}
+.tinfo{flex:1; min-width:0}
+.nm{font-size:15px; font-weight:800; letter-spacing:-.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.rl{font-size:12px; font-weight:600; color:var(--muted); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.go{flex:0 0 auto; display:inline-flex; align-items:center; color:var(--accent-2)}
+.go .go-tx{display:none}
+.go svg{width:20px; height:20px}
+
+.foot{margin-top:26px; text-align:center; font-size:11.5px; font-weight:600; color:var(--muted-2); letter-spacing:.4px}
 .foot a{color:var(--accent-2); text-decoration:none}
-@media (min-width:640px){.grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}}
-@media (max-width:420px){h1{font-size:30px}.grid{gap:12px}.tile{padding:22px 12px}}
+
+/* Easter Egg */
 .logo{-webkit-user-select:none; user-select:none}
 #lukasEgg{pointer-events:none; transition:opacity .3s ease, transform .3s ease, filter .3s ease}
 #lukasEgg.done{pointer-events:auto}
+
+/* TABLET / DESKTOP: mehrspaltig, zentrierte Karten */
+@media (min-width:600px){
+  body{padding:40px 18px}
+  .top{margin-bottom:34px}
+  .logo, .logo img{height:30px}
+  h1{margin-top:20px; font-size:36px}
+  .sub{margin-top:9px; font-size:14px}
+  .grid{grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:16px}
+  .tile{display:block; text-align:center; padding:26px 18px; border-radius:22px}
+  .tile:hover{transform:translateY(-4px); box-shadow:0 20px 44px rgba(28,43,255,.22)}
+  .av{width:74px; height:74px; margin:0 auto 14px; font-size:24px}
+  .nm{font-size:16.5px; letter-spacing:-.3px; white-space:normal}
+  .rl{font-size:12px; margin-top:3px; white-space:normal}
+  .go{
+    margin-top:14px; padding:6px 13px; border-radius:999px; gap:6px;
+    font-size:11.5px; font-weight:700; letter-spacing:.2px;
+    background:rgba(28,43,255,.14); border:1px solid rgba(28,43,255,.28);
+  }
+  .go .go-tx{display:inline}
+  .go svg{width:13px; height:13px}
+  .foot{margin-top:34px; font-size:12px}
+}
 </style>
 </head>
 <body>
@@ -84,27 +111,35 @@ h1{margin-top:20px; font-size:36px; font-weight:800; letter-spacing:-1px}
     <main class="grid">
       <a class="tile" href="https://danilo.gmsit.ch">
         <div class="av"><span>DG</span><img src="/danilo.jpg" alt="Danilo Gomes" onerror="this.remove()"></div>
-        <div class="nm">Danilo Gomes</div>
-        <div class="rl">Managing Director &amp; Project Manager</div>
-        <span class="go">Visitenkarte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+        <div class="tinfo">
+          <div class="nm">Danilo Gomes</div>
+          <div class="rl">Managing Director &amp; Project Manager</div>
+        </div>
+        <span class="go"><span class="go-tx">Visitenkarte</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
       </a>
       <a class="tile" href="https://milad.gmsit.ch">
         <div class="av"><span>MR</span><img src="/milad.jpg" alt="Milad Rezaei" onerror="this.remove()"></div>
-        <div class="nm">Milad Rezaei</div>
-        <div class="rl">Project Manager</div>
-        <span class="go">Visitenkarte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+        <div class="tinfo">
+          <div class="nm">Milad Rezaei</div>
+          <div class="rl">Project Manager</div>
+        </div>
+        <span class="go"><span class="go-tx">Visitenkarte</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
       </a>
       <a class="tile" href="https://edson.gmsit.ch">
         <div class="av"><span>EG</span><img src="/edson.jpg" alt="Edson Gomes" onerror="this.remove()"></div>
-        <div class="nm">Edson Gomes</div>
-        <div class="rl">Consultant</div>
-        <span class="go">Visitenkarte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+        <div class="tinfo">
+          <div class="nm">Edson Gomes</div>
+          <div class="rl">Consultant</div>
+        </div>
+        <span class="go"><span class="go-tx">Visitenkarte</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
       </a>
       <a class="tile" id="lukasEgg" style="display:none" href="https://lukas.gmsit.ch">
         <div class="av"><span>LM</span></div>
-        <div class="nm">Lukas Miksa</div>
-        <div class="rl">Solutions Architect</div>
-        <span class="go">Visitenkarte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+        <div class="tinfo">
+          <div class="nm">Lukas Miksa</div>
+          <div class="rl">Solutions Architect</div>
+        </div>
+        <span class="go"><span class="go-tx">Visitenkarte</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
       </a>
     </main>
 
@@ -119,15 +154,15 @@ h1{margin-top:20px; font-size:36px; font-weight:800; letter-spacing:-1px}
   logo.addEventListener('click',function(){
     if(tile.classList.contains('done')) return;
     n++;
-    if(n===1) tile.style.display='block';
+    if(n===1) tile.style.display='';
     var p=Math.min(n/target,1);
     tile.style.opacity=p.toFixed(3);
-    tile.style.transform='scale('+(0.85+0.15*p).toFixed(3)+')';
-    tile.style.filter='blur('+((1-p)*6).toFixed(2)+'px)';
+    tile.style.transform='scale('+(0.9+0.1*p).toFixed(3)+')';
+    tile.style.filter='blur('+((1-p)*5).toFixed(2)+'px)';
     if(p>=1){
       tile.classList.add('done');
       tile.style.filter='none';
-      tile.style.transform='scale(1.06)';
+      tile.style.transform='scale(1.04)';
       setTimeout(function(){tile.style.transform='scale(1)';},180);
     }
   });
