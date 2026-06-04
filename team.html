@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Unser Team – GMS Consulting GmbH</title>
+<meta name="description" content="Das Team der GMS Consulting GmbH. Lerne die Köpfe hinter GMS kennen.">
+<meta name="theme-color" content="#0A0A0F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Unser Team – GMS Consulting GmbH">
+<meta property="og:description" content="Die Köpfe hinter GMS Consulting GmbH">
+<meta property="og:url" content="https://team.gmsit.ch">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231C2BFF'/><text x='50' y='70' font-family='Arial' font-size='50' font-weight='900' fill='white' text-anchor='middle'>g</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#1C2BFF; --accent-2:#7E88FF; --glow:rgba(28,43,255,.55);
+  --bg:#0A0A0F; --card:#121218; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.16);
+  --text:#fff; --muted:rgba(255,255,255,.56); --muted-2:rgba(255,255,255,.40);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter','Helvetica Neue',Helvetica,Arial,system-ui,-apple-system,sans-serif;
+  background:var(--bg); color:var(--text); min-height:100vh; min-height:100dvh;
+  display:flex; align-items:center; justify-content:center; padding:40px 18px;
+  -webkit-font-smoothing:antialiased; position:relative; overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(55% 40% at 50% -6%, var(--glow), transparent 70%),
+    radial-gradient(45% 35% at 90% 4%, rgba(110,60,255,.28), transparent 70%),
+    radial-gradient(40% 32% at 5% 98%, rgba(28,43,255,.20), transparent 70%);
+}
+.wrap{position:relative; z-index:1; width:100%; max-width:760px}
+.top{text-align:center; margin-bottom:34px}
+.logo{height:30px; display:inline-flex; align-items:center}
+.logo img{height:30px; width:auto; display:block}
+.logo .fb{display:none; font-weight:900; font-size:26px; letter-spacing:-1px; color:#fff}
+h1{margin-top:20px; font-size:36px; font-weight:800; letter-spacing:-1px}
+.sub{margin-top:9px; font-size:14px; font-weight:500; color:var(--muted)}
+.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.tile{
+  display:block; background:var(--card); border:1px solid var(--line); border-radius:22px;
+  padding:26px 18px; text-align:center; text-decoration:none; color:inherit; cursor:pointer;
+  transition:transform .16s ease, border-color .16s ease, box-shadow .16s ease, background .16s ease;
+}
+.tile:hover{transform:translateY(-4px); border-color:var(--accent); background:#15151d; box-shadow:0 20px 44px rgba(28,43,255,.22)}
+.av{
+  width:72px; height:72px; border-radius:50%; margin:0 auto 14px; overflow:hidden; position:relative;
+  background:linear-gradient(135deg,#1C2BFF,#7E88FF);
+  display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:24px; letter-spacing:-1px;
+  box-shadow:0 8px 22px rgba(28,43,255,.40);
+}
+.av img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.tile .nm{font-size:16.5px; font-weight:800; letter-spacing:-.3px}
+.tile .rl{font-size:12px; font-weight:600; color:var(--muted); margin-top:3px}
+.tile .go{
+  margin-top:14px; display:inline-flex; align-items:center; gap:6px;
+  font-size:11.5px; font-weight:700; color:var(--accent-2); letter-spacing:.2px;
+  padding:6px 13px; border-radius:999px; background:rgba(28,43,255,.14); border:1px solid rgba(28,43,255,.28);
+}
+.tile .go svg{width:13px; height:13px}
+.foot{margin-top:34px; text-align:center; font-size:12px; font-weight:600; color:var(--muted-2); letter-spacing:.4px}
+.foot a{color:var(--accent-2); text-decoration:none}
+@media (min-width:640px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:420px){h1{font-size:30px}.grid{gap:12px}.tile{padding:22px 12px}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <span class="logo"><img src="https://framerusercontent.com/images/jKL5v4EHsAh79dvtpPrkzc3L2n8.png" alt="gms" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fb">gms</span></span>
+      <h1>Unser Team</h1>
+      <p class="sub">Die Köpfe hinter der GMS Consulting GmbH</p>
+    </header>
+
+    <main class="grid">
+      <a class="tile" href="https://danilo.gmsit.ch">
+        <div class="av"><span>DG</span></div>
+        <div class="nm">Danilo Gomes</div>
+        <div class="rl">Co-Managing Director &amp; Project Management</div>
+        <span class="go">Visitenkarte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+      </a>
+      <a class="tile" href="https://milad.gmsit.ch">
+        <div class="av"><span>MR</span></div>
+        <div class="nm">Milad Rezaei</div>
+        <div class="rl">Project Manager</div>
+        <span class="go">Visitenkarte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+      </a>
+      <a class="tile" href="https://edson.gmsit.ch">
+        <div class="av"><span>EG</span></div>
+        <div class="nm">Edson Gomes</div>
+        <div class="rl">Managing Director &amp; Consultant</div>
+        <span class="go">Visitenkarte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+      </a>
+      <a class="tile" href="https://lukas.gmsit.ch">
+        <div class="av"><span>LM</span></div>
+        <div class="nm">Lukas Daniel Miksa</div>
+        <div class="rl">Solution Architecture</div>
+        <span class="go">Visitenkarte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+      </a>
+    </main>
+
+    <p class="foot">team.gmsit.ch &middot; <a href="https://www.gmsit.ch">gmsit.ch</a></p>
+  </div>
+</body>
+</html>

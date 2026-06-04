@@ -1,9 +1,10 @@
 {
-  "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/danilo.html", "has": [{ "type": "host", "value": "danilo.gmsit.ch" }] },
     { "source": "/", "destination": "/milad.html",  "has": [{ "type": "host", "value": "milad.gmsit.ch" }] },
     { "source": "/", "destination": "/edson.html",  "has": [{ "type": "host", "value": "edson.gmsit.ch" }] },
-    { "source": "/", "destination": "/lukas.html",  "has": [{ "type": "host", "value": "lukas.gmsit.ch" }] }
+    { "source": "/", "destination": "/lukas.html",  "has": [{ "type": "host", "value": "lukas.gmsit.ch" }] },
+    { "source": "/", "destination": "/team.html",   "has": [{ "type": "host", "value": "team.gmsit.ch" }] },
+    { "source": "/", "destination": "/team.html" }
   ]
 }
